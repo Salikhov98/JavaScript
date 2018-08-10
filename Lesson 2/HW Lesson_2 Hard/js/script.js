@@ -16,14 +16,19 @@ for(var i = 0; i < week.length; i++){
 var arr = [];
 for (var i = 0; i < 7; i++) {
 	var number = prompt('Введите многозначное число');
-	if (number > 10) {
+	if (number.length > 1) {
 		arr[i] = number;
 	} else {
-		while( number > 10 ){
-			var error = prompt('!!!Введите многозначное число!!!');
-			i--
-		}
-		arr[i] = error;
+		i--;
+		alert('!!Введите многозначное!!')
+	}
+}
+
+for (var i = 0; i < 7; i++) {
+	if (arr[i][0] == 3 || arr[i][0] == 7) {
+		console.log(arr[i])
+	} else {
+
 	}
 }
  console.log(arr);

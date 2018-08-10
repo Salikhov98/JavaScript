@@ -1,13 +1,13 @@
 
-var BudgetForMonth = prompt("Вам бюджет на месяц?");
-var ScoreName = prompt("Название вашего магазина?");
+var budgetForMonth = prompt("Вам бюджет на месяц?");
+var scoreName = prompt("Название вашего магазина?");
 var month = 30;
 let time = 19;
 
 var mainList = {
-	BudgetForMonth,
-	ScoreName,
-	ShopGoods: [],
+	budgetForMonth,
+	scoreName,
+	shopGoods: [],
 	employers: {},
 	open: false
 }
@@ -17,7 +17,7 @@ for (var i = 0; i < 3; i++){
 
 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
 		console.log('Все верно!');
-		mainList.ShopGoods[i] = a;
+		mainList.shopGoods[i] = a;
 	} else {
 		console.log('ложь!');
 	}
@@ -28,7 +28,7 @@ while(i < 3){
 	var a = prompt('Какой тип товаров будем продовать?');
 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
 		console.log('Все верно!');
-		mainList.ShopGoods[i] = a;
+		mainList.shopGoods[i] = a;
 	} else {
 		console.log('ложь!');
 	}
@@ -40,7 +40,7 @@ do{
 	var a = prompt('Какой тип товаров будем продовать?');
 	if ((typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
 		console.log('Все верно!');
-		mainList.ShopGoods[i] = a;
+		mainList.shopGoods[i] = a;
 	} else {
 		console.log('Ложь');
 	}
@@ -59,6 +59,6 @@ if (time < 0) {
 }
 
 
-var BudgetForDay = mainList.BudgetForMonth / month;
-alert(BudgetForDay.toFixed(0));
+var budgetForDay = mainList.budgetForMonth / month;
+alert(budgetForDay.toFixed(0));
 console.log(mainList);
