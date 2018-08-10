@@ -1,6 +1,9 @@
 var num = 33721;
 
-var factor = 3*3*7*2*1; 
+var num1 = (num).toString(); 
+
+var factor = num1[0]*num1[1]*num1[2]*num1[3]*num1[4];
+
 
 console.log(factor);
 

@@ -1,4 +1,3 @@
-
 var BudgetForMonth = prompt("Вам бюджет на месяц?");
 var ScoreName = prompt("Название вашего магазина?");
 var month = 30;
