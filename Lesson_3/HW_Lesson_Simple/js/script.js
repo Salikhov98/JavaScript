@@ -1,56 +1,8 @@
-/*let num = 20;
-
-function showFirstMessage(text) {
-	alert(text);
-	num = 10;
-}
-
-showFirstMessage("Hello world!");
-console.log(num);*/
-
-/*function calc(a,b){
-	return a + b
-}
-
-console.log(calc(4,4));
-console.log(calc(4,13));*/
-
-
-
-/*let calc = function(a,b){
-	return a+b
-}
-
-console.log(calc(4,4));
-console.log(calc(4,13));*/
-
-
-
-/*let calc = (a,b) => a+b
-
-console.log(calc(4,5));
-console.log(calc(4,15));*/
-
-
-/*
-let str = "test";
-console.log(str.toUpperCase());
-console.log(str.toLowerCase());*/
-
-/*let str = "12.2";
-console.log(Math.round(str));*/
-
-
-/*let str = "12.2px";
-console.log(parseInt(str));
-console.log(parseFloat(str));*/
-
-
 let budgetForMonth, 
 	scoreName, 
 	month, 
 	time,
-	price
+	price = 100;
 
 function start() {
 	budgetForMonth = prompt("Вам бюджет на месяц?");
@@ -125,10 +77,39 @@ function workTime(time){
 }
 workTime(18);
 
+function forDay() {
+	let budgetForDay = mainList.budgetForMonth / month;
+	alert(budgetForDay.toFixed(0));
+}
+forDay();
+
+function discountSystem(a){
+	mainList.discount = confirm("Вы желаете получить скидку 20%?");
+	if (mainList.discount == true){
+		alert('Сумма к оплате со скидкой: ' + (price * a) / 100);
+	} else {
+		alert('Вы продолжили покупки без скидок! Сумма к оплате: ' + price);
+	}
+}
+discountSystem(80);
 
 
-let budgetForDay = mainList.budgetForMonth / month;
-alert(budgetForDay.toFixed(0));
+
+function hireEmployers() {
+	for (let i = 1; i <= 4; i++){
+		let empInput = prompt('Введите имя сотрудника: ');
+		mainList.Employers = {
+			[i]: empInput
+		}
+	console.log(mainList.Employers);
+	}
+}
+hireEmployers();
+
+
+
+
+
+
+
 console.log(mainList);
-
-
