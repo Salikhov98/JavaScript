@@ -27,12 +27,12 @@ start();
 		chooseGoods: function chooseGoods(){
 				for (let i = 0; i < 3; i++){
 				let a = prompt('Какой тип товаров будем продовать?', '');
-				if ( (typeof(a)) === 'string' && a !== null && a != '' && a.length < 50 ) {
+				if ( (typeof(a)) === 'string' && a != null && a != '' && a.length < 50 ) {
 					console.log('Все верно!');
 					mainList.shopGoods[i] = a;
 				} else {
-					i--; 
 					console.log('ложь!');
+					i--; 
 				}
 			}
 		},
@@ -63,6 +63,9 @@ start();
 		hireEmployers: function hireEmployers() {
 			for (let i = 1; i <= 4; i++){
 				let empInput = prompt('Введите имя сотрудника: ', '');
+				while ( (typeof(empInput)) !== 'string' || empInput == null || empInput == ''){
+					empInput = prompt('Введите имя сотрудника: ', '');
+				}
 				mainList.Employers = {
 					[i]: empInput
 				}
@@ -74,8 +77,26 @@ start();
 			mainList.shopItems = items.split(',');
 			mainList.shopItems.push(prompt('Запищите еще что-то если пропустили:', ''));
 			mainList.shopItems.sort();
+		},
+		buyShop: function buyShop() {
+			mainList.shopGoods.forEach(function(item, i, arr){
+				console.log(i+1 + ': ' + item);
+			});
+		},
+		usShop: function usShop() {
+			console.log('Наш магазин включает в себя:');
+			for ( let key in mainList ) {
+				console.log(key);
+			}
 		}
 	}
 
-
+mainList.chooseGoods();
+mainList.workTime(time);
+mainList.forDay();
+mainList.discountSystem();
+mainList.hireEmployers();
+mainList.chooseShopItems();
+mainList.buyShop();
+mainList.usShop();
 console.log(mainList);
